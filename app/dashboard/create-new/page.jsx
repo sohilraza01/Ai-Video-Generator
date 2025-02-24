@@ -30,7 +30,7 @@ function CreateNew() {
    
 
     const {videoData,setVideoData} = useContext(VideoDataContext);
-    const {userDetail,setUserDetail} = useContext(UserDetailContext);
+    // const {userDetail,setUserDetail} = useContext(UserDetailContext);
     const {user} = useUser();
 
     const onHandleInputChange = (fieldName, fieldValue)=>{
@@ -43,10 +43,10 @@ function CreateNew() {
     }
 
     const onCreateClickHandler =()=>{
-        if(!userDetail?.credits>0){
-            toast("You don't have enough Credits")
-            return ;
-        }
+        // if(!userDetail?.credits>0){
+        //     toast("You don't have enough Credits")
+        //     return ;
+        // }
         GetVideoScript();
     }
     // Get Video Script
@@ -198,18 +198,18 @@ const SaveVideoData= async(videoData)=>{
  * Use to update users credits
  */
 
-const UpdateUserCredits= async ()=>{
-    const result = await db.update(Users).set({
-        credits:userDetail?.credits-10
-    }).where(eq(Users?.email,user?.primaryEmailAddress?.emailAddress))
-    console.log(result);
-    setUserDetail(prev=>({
-        ...prev,
-        'credits':userDetail?.credits-10
-    }))
+// const UpdateUserCredits= async ()=>{
+//     const result = await db.update(Users).set({
+//         credits:userDetail?.credits-10
+//     }).where(eq(Users?.email,user?.primaryEmailAddress?.emailAddress))
+//     console.log(result);
+//     setUserDetail(prev=>({
+//         ...prev,
+//         'credits':userDetail?.credits-10
+//     }))
 
-    // setVideoData(null);
-}
+//     // setVideoData(null);
+// }
 
 
 

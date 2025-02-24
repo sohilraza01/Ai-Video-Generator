@@ -14,8 +14,6 @@ useEffect(()=>{
 
   return (
     <div>
-      {/* <h1>Sohil Raza</h1> */}
-      {/* <Button onClick={handleRedirect}>Add Data</Button> */}
       <UserButton />
     </div>
   );
