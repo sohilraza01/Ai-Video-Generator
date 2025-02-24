@@ -188,7 +188,7 @@ const SaveVideoData= async(videoData)=>{
             createdBy:user?.primaryEmailAddress?.emailAddress
         }).returning({id:VideoData?.id})
 
-        await UpdateUserCredits()
+        // await UpdateUserCredits()
         setVideoId(result[0].id)
         setPlayVideo(true);
         console.log(result);
